@@ -60,7 +60,7 @@ jobs:
           cache: maven
       - name: compile jar
         run: mvn -B package --file pom.xml -DskipTests
-      - run: ls -alt task2/target 
+      - run: ls -alt 
       - run: mkdir staging && cp ./task2/target/*.jar staging
       - uses: actions/upload-artifact@v3
         with:
