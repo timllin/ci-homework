@@ -61,7 +61,7 @@ jobs:
       - name: compile jar
         run: mvn -B package --file pom.xml -DskipTests
       - run: ls -alt 
-      - run: mkdir staging && cp ./task2/target/*.jar staging
+      - run: mkdir staging && cp ./target/*.jar staging
       - uses: actions/upload-artifact@v3
         with:
           name: Package
