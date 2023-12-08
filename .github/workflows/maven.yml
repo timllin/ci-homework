@@ -52,9 +52,12 @@ jobs:
         working-directory: ./task2
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - name: set up JDK 11
+        uses: actions/setup-java@v4
         with:
           java-version: 11
+          distribution: 'temurin'
+          cache: maven
       - name: compile jar
         run: mvn -B package --file pom.xml -DskipTests
       - run: ls -alt task2/target 
