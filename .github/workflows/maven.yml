@@ -34,6 +34,8 @@ jobs:
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-m2     
     - name: Change to task2 directory
+      run: cd task2/
+    - name: test
       run: ls -alt
     - name: run checkstyle
       run: 
