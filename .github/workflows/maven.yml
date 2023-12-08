@@ -65,6 +65,6 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: package
-          path: /task2/staging
+          path: task2/staging
       - run: ls
       
