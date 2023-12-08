@@ -31,7 +31,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Cache the Maven packages to speed up build
-      uses: actions/cache@v1
+      uses: actions/cache@v3
       with:
         path: ~/.m2
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
@@ -60,8 +60,7 @@ jobs:
           cache: maven
       - name: compile jar
         run: mvn -B package --file pom.xml -DskipTests
-      - run: ls -alt 
-      - run: mkdir staging && cp ./target/*.jar staging
+      - run: mkdir staging && cp ./target/*-shaded.jar staging
       - uses: actions/upload-artifact@v3
         with:
           name: Package
