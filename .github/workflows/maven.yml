@@ -33,13 +33,13 @@ jobs:
         path: ~/.m2
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-m2     
-        
+    - run: cd ./task2
     - name: run checkstyle
       run: mvn checkstyle:checkstyle
     - name: test code
       run: mvn test
   
-  publish-job:
+  create-jar:
   
     runs-on: ubuntu-latest
     needs: [build_test]
