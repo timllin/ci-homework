@@ -33,7 +33,8 @@ jobs:
         path: ~/.m2
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-m2     
-    - run: cd ./task2
+    - run: cd ./task2/ 
+    - run: pwd
     - name: run checkstyle
       run: mvn checkstyle:checkstyle
     - name: test code
