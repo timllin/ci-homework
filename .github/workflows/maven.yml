@@ -60,9 +60,11 @@ jobs:
           cache: maven
       - name: compile jar
         run: mvn -B package --file pom.xml -DskipTests
-      - run: ls ./target -alt
+      - run: ls -alt
       - run: mkdir staging && cp ./target/*-shaded.jar staging
       - uses: actions/upload-artifact@v3
         with:
           name: Package
           path: staging
+      - run: ls ./staging -alt
+      
