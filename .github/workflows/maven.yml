@@ -43,13 +43,13 @@ jobs:
     - name: test code
       run: mvn test
     - name: tt
-      run: ls -alt
+      run: ls -alt ./target 
     - name: test report
       uses: dorny/test-reporter@v1
       if: always()
       with:
         name: Test Reports
-        path: task2/target/**/*.xml
+        path: task2/target/surefire-reports/*.xml
         reporter: java-junit
         fail-on-error: true
   
