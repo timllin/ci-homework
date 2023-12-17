@@ -45,8 +45,6 @@ jobs:
         mvn checkstyle:checkstyle
     - name: test code
       run: mvn test
-    - name: tt
-      run: ls -alt ./target/site 
     - name: test report
       uses: dorny/test-reporter@v1
       if: always()
