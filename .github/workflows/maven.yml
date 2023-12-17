@@ -51,15 +51,15 @@ jobs:
       uses: dorny/test-reporter@v1
       if: always()
       with:
-        name: est Reports
-        path: task2/target/surefire-reports/*.xml, task2/target/site/jacoco/*.xml
+        name: test report
+        path: task2/target/surefire-reports/*.xml
         reporter: java-junit
         fail-on-error: true
     - name: test coverage report
       id: jacoco_reporter
       uses: PavanMudigonda/jacoco-reporter@v4.9
       with:
-        coverage_results_path: task2/target/site/jacoco/jacoco.xml
+        coverage_results_path: target/site/jacoco/jacoco.xml
         coverage_report_name: test coverage report
         coverage_report_title: test coverage report
         github_token: ${{ secrets.GITHUB_TOKEN }}
