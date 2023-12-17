@@ -43,7 +43,7 @@ jobs:
     - name: test code
       run: mvn test
     - name: tt
-      run: ls -alt task2/target/
+      run: ls -alt
     - name: test report
       uses: dorny/test-reporter@v1
       if: always()
