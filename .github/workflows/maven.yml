@@ -42,6 +42,14 @@ jobs:
         mvn checkstyle:checkstyle
     - name: test code
       run: mvn test
+    - name: test report
+      uses: dorny/test-reporter@v1
+      if: always()
+      with:
+        name: Test Reports
+        path: '.target/surfire-reports/*xml, ./target/site/jococo/*.xml'
+        reporter: java-junit
+        fail-on-error: true
   
   compile-jar:
   
