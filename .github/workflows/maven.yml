@@ -52,7 +52,7 @@ jobs:
       if: always()
       with:
         name: Test Reports
-        path: task2/target/surefire-reports/*.xml
+        path: task2/target/surefire-reports/*.xml, task2/target/site/jacoco/*.xml
         reporter: java-junit
         fail-on-error: true
   
