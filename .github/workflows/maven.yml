@@ -47,7 +47,7 @@ jobs:
       if: always()
       with:
         name: Test Reports
-        path: .target/surfire-reports/*.xml, ./target/site/jacoco/*.xml'
+        path: './target/surfire-reports/*.xml, ./target/site/jacoco/*.xml'
         reporter: java-junit
         fail-on-error: true
   
