@@ -46,7 +46,7 @@ jobs:
     - name: test code
       run: mvn test
     - name: tt
-      run: ls -alt ./target 
+      run: ls -alt ./target/site/jacoco 
     - name: test report
       uses: dorny/test-reporter@v1
       if: always()
@@ -59,7 +59,7 @@ jobs:
       id: jacoco_reporter
       uses: PavanMudigonda/jacoco-reporter@v4.9
       with:
-        coverage_results_path: target/site/jacoco/jacoco.xml
+        coverage_results_path: 'task2/target/site/jacoco/jacoco.xml'
         coverage_report_name: test coverage report
         coverage_report_title: test coverage report
         github_token: ${{ secrets.GITHUB_TOKEN }}
