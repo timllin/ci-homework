@@ -21,7 +21,10 @@ jobs:
     defaults:
       run:
         working-directory: ./task2
-
+    permissions:
+      contents: read
+      actions: read
+      checks: write
     steps:
     - uses: actions/checkout@v4
     - name: set up JDK 11
